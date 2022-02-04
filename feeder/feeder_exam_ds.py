@@ -95,7 +95,7 @@ class FeederExamDs(torch.utils.data.Dataset):
         self.V = 13  #joint  
 
     def __len__(self):
-        return len(self.sample_name)
+        return len(self.labels)
 
     def __iter__(self):
         return self
@@ -155,9 +155,8 @@ class FeederExamDs(torch.utils.data.Dataset):
 
 
 if __name__ == "__main__":
-    ds = FeederExamDs(r"E:\Workspace\data\action\exam",
-                      r"E:\Workspace\data\action\exam\label",
-                      window_size=10, random_choose=True)
+    ds = FeederExamDs(r"/content/exam_action_ds/train",
+                      window_size=50, random_choose=True, random_move=True,)
     data, lbl = ds[0]
     print(data.shape)
     print(lbl)

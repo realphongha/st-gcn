@@ -6,9 +6,9 @@ train_feeder_args:
   random_choose: True
   random_move: True
   window_size: 50 
-  data_path: /mnt/hdd10tb/Students/phonghh/dataset/action/exam/exam_action_ds/train
+  data_path: /content/exam_action_ds/train
 test_feeder_args:
-  data_path: /mnt/hdd10tb/Students/phonghh/dataset/action/exam/exam_action_ds/val
+  data_path: /content/exam_action_ds/val
   random_choose: True
   window_size: 50
 
@@ -19,11 +19,11 @@ model_args:
   num_class: 4
   edge_importance_weighting: True
   graph_args:
-    layout: 'openpose'
+    layout: 'exam'
     strategy: 'spatial'
 
 # training
-device: [5]
+device: [0]
 batch_size: 256 
 test_batch_size: 256
 

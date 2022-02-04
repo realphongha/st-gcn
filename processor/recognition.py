@@ -80,7 +80,6 @@ class REC_Processor(Processor):
         self.adjust_lr()
         loader = self.data_loader['train']
         loss_value = []
-
         for data, label in loader:
 
             # get data

@@ -56,7 +56,7 @@ class Processor(IO):
                 shuffle=True,
                 num_workers=self.arg.num_worker * torchlight.ngpu(
                     self.arg.device),
-                drop_last=True)
+                drop_last=False)
         if self.arg.test_feeder_args:
             self.data_loader['test'] = torch.utils.data.DataLoader(
                 dataset=Feeder(**self.arg.test_feeder_args),

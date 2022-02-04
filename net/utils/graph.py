@@ -48,6 +48,14 @@ class Graph():
                              (0, 1), (15, 0), (14, 0), (17, 15), (16, 14)]
             self.edge = self_link + neighbor_link
             self.center = 1
+        elif layout == 'exam':
+            self.num_node = 13
+            self_link = [(i, i) for i in range(self.num_node)]
+            neighbor_link = [(5, 11), (6, 12), (5, 6), (5, 7), (6, 8), (7, 9), 
+                             (8, 10), (1, 2), (0, 1), (0, 2), (1, 3), (2, 4), 
+                             (3, 5), (4, 6), (11, 12)]
+            self.edge = self_link + neighbor_link
+            self.center = 0
         elif layout == 'ntu-rgb+d':
             self.num_node = 25
             self_link = [(i, i) for i in range(self.num_node)]

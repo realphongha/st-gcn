@@ -3,7 +3,7 @@ weights: ./models/st_gcn.kinetics.pt
 # feeder
 feeder: feeder.feeder_exam_ds.FeederExamDs
 test_feeder_args:
-  data_path: /mnt/hdd10tb/Students/phonghh/dataset/action/exam/exam_action_ds/val
+  data_path: /content/exam_action_ds/val
   random_choose: True
   window_size: 50
 
@@ -11,10 +11,10 @@ test_feeder_args:
 model: net.st_gcn.Model
 model_args:
   in_channels: 3
-  num_class: 400
+  num_class: 4
   edge_importance_weighting: True
   graph_args:
-    layout: 'openpose'
+    layout: 'exam'
     strategy: 'spatial'
 
 # test 
