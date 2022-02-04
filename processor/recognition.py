@@ -42,7 +42,7 @@ class REC_Processor(Processor):
                                         **(self.arg.model_args))
         self.model.apply(weights_init)
         self.loss = nn.CrossEntropyLoss()
-        
+
     def load_optimizer(self):
         if self.arg.optimizer == 'SGD':
             self.optimizer = optim.SGD(
@@ -86,9 +86,10 @@ class REC_Processor(Processor):
             # get data
             data = data.float().to(self.dev)
             label = label.long().to(self.dev)
-
+            # print(data.shape, label)
             # forward
             output = self.model(data)
+            # print(output.shape)
             loss = self.loss(output, label)
 
             # backward
@@ -116,7 +117,7 @@ class REC_Processor(Processor):
         label_frag = []
 
         for data, label in loader:
-            
+
             # get data
             data = data.float().to(self.dev)
             label = label.long().to(self.dev)

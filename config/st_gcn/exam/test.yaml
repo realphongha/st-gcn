@@ -1,10 +1,11 @@
 weights: ./models/st_gcn.kinetics.pt
 
 # feeder
-feeder: feeder.feeder.Feeder
+feeder: feeder.feeder_exam_ds.FeederExamDs
 test_feeder_args:
-  data_path: ./data/Kinetics/kinetics-skeleton/val_data.npy
-  label_path: ./data/Kinetics/kinetics-skeleton/val_label.pkl
+  data_path: /mnt/hdd10tb/Students/phonghh/dataset/action/exam/exam_action_ds/val
+  random_choose: True
+  window_size: 50
 
 # model
 model: net.st_gcn.Model
